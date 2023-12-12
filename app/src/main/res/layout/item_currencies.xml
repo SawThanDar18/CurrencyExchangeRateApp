@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_margin="8dp"
     android:gravity="center_vertical"
-    android:orientation="vertical"
-    android:padding="10dp"
+    android:paddingVertical="10dp"
+    android:paddingLeft="10dp"
     app:cardCornerRadius="6dp"
     app:cardElevation="10dp">
 
     <TextView
         android:id="@+id/tvCurrency"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
@@ -22,11 +23,22 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCurrencyLabel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvToCurrency"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/tvCurrency"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCurrency"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrency" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCurrencyLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCurrency"
+        app:srcCompat="@drawable/baseline_arrow_forward_ios_24_black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
